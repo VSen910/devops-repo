@@ -1,0 +1,45 @@
+from collections import deque
+
+def is_valid_move(x, y, grid, visited):
+    rows, cols = len(grid), len(grid[0])
+    # Check if the cell is within bounds and not visited or an obstacle
+    return 0 <= x < rows and 0 <= y < cols and not visited[x][y] and grid[x][y] == 0
+
+def find_path(grid, start, end):
+    rows, cols = len(grid), len(grid[0])
+    directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]  # Up, Down, Left, Right
+    visited = [[False for _ in range(cols)] for _ in range(rows)]
+    
+    # Queue for BFS: stores tuples of (x, y, path)
+    queue = deque([(start[0], start[1], [(start[0], start[1])])])
+    visited[start[0]][start[1]] = True
+
+    while queue:
+        x, y, path = queue.popleft()
+
+        # If we reached the end, return the path
+        if (x, y) == end:
+            return path
+
+        # Explore neighbors
+        for dx, dy in directions:
+            new_x, new_y = x + dx, y + dy
+            if is_valid_move(new_x, new_y, grid, visited):
+                visited[new_x][new_y] = True
+                queue.append((new_x, new_y, path + [(new_x, new_y)]))
+
+    return None  # No path found
+
+# Example grid and start/end points
+grid = [
+    [0, 1, 0, 0, 0],
+    [0, 1, 0, 1, 0],
+    [0, 0, 0, 1, 0],
+    [0, 1, 0, 0, 0],
+    [0, 0, 0, 1, 0]
+]
+start = (0, 0)
+end = (4, 4)
+
+path = find_path(grid, start, end)
+print("Path found:", path)
