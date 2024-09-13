@@ -1,18 +1,16 @@
+#Contributer Vineet Sen
 def add(a, b):
     return a+b
 
-<<<<<<< HEAD
+#Contributer Nischay Kondai
 def modu(x, y):
     return x%y
-    
-=======
+
+#Contributer Pratik Raj
 def sub(a, b):
     return a-b
->>>>>>> 5b8fef321df2e0e1cfc29ecd21e7d8dcb14d3265
 
-
-
-
+#Contributer Sai Kartik Hosur
 def insertionSort(arr):
     n = len(arr)  # Get the length of the array
       
