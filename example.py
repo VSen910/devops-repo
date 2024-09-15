@@ -82,4 +82,4 @@ def factorial(n):
             result *= i
         return result
 
-factorial(5)
+factorial(10)
