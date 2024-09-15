@@ -54,3 +54,19 @@ bubble_sort(arr)
 
 print("Sorted list is:")
 print(arr)
+
+#Hanson George's Contribution 
+
+num_list = [12, 36, 48, 55, 23, 45, 67, 89, 36]
+count = 0
+for index, num in enumerate(num_list):
+    count += 1
+    if num > 45:
+        print("Over 45")
+    else:
+        print("Under 45")
+    if num == 36:
+        print('Number found at position:', index)
+        break
+print("Total iterations before break:", count)
+
