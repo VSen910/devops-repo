@@ -70,3 +70,16 @@ for index, num in enumerate(num_list):
         break
 print("Total iterations before break:", count)
 
+
+#Guntreddy Hemanth Contribution 
+
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        result = 1
+        for i in range(2, n + 1):
+            result *= i
+        return result
+
+factorial(5)
