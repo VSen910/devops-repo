@@ -1,11 +1,20 @@
-def add(a, b):
-    return a+b
-
-<<<<<<< HEAD
-def modu(x, y):
-    return x%y
+# Selection sort in Python
+# time complexity O(n*n)
+#sorting by finding min_index
+def selectionSort(array, size):
     
-=======
-def sub(a, b):
-    return a-b
->>>>>>> 5b8fef321df2e0e1cfc29ecd21e7d8dcb14d3265
+    for ind in range(size):
+        min_index = ind
+ 
+        for j in range(ind + 1, size):
+            # select the minimum element in every iteration
+            if array[j] < array[min_index]:
+                min_index = j
+         # swapping the elements to sort the array
+        (array[ind], array[min_index]) = (array[min_index], array[ind])
+ 
+arr = [-2, 45, 0, 11, -9,88,-97,-202,747]
+size = len(arr)
+selectionSort(arr, size)
+print('The array after sorting in Ascending Order by selection sort is:')
+print(arr)
