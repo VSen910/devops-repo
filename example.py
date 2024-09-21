@@ -206,3 +206,24 @@ if result != -1:
     print(f"Element is present at index {result}")
 else:
     print("Element is not present in array")
+
+#contributer Hanson George
+
+def linear_search(arr, target):
+
+    for i in range(len(arr)):
+
+        if arr[i] == target:
+            return i
+    return -1
+
+#example usage
+arr = [3, 5, 2, 9, 7]
+target = 9
+
+result = linear_search(arr, target)
+
+if result != -1:
+    print(f"Element found at index {result}")
+else:
+    print("Element not found")
