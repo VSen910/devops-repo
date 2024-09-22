@@ -189,11 +189,13 @@ def linear_search(arr, target):
         if arr[i] == target:
             return i
     return -1
-#Contributor Prajwal M N
+
+
+# Contributor Prajwal M N
 def heapify(arr, N, i):
     largest = i  # Initialize largest as root
-    l = 2 * i + 1     # left = 2*i + 1
-    r = 2 * i + 2     # right = 2*i + 2
+    l = 2 * i + 1  # left = 2*i + 1
+    r = 2 * i + 2  # right = 2*i + 2
 
     # See if left child of root exists and is
     # greater than root
@@ -212,33 +214,19 @@ def heapify(arr, N, i):
         # Heapify the root.
         heapify(arr, N, largest)
 
-# The main function to sort an array of given size
 
-
-def heapSort(arr):
+def heap_sort(arr):
     N = len(arr)
 
     # Build a maxheap.
-    for i in range(N//2 - 1, -1, -1):
+    for i in range(N // 2 - 1, -1, -1):
         heapify(arr, N, i)
 
     # One by one extract elements
-    for i in range(N-1, 0, -1):
+    for i in range(N - 1, 0, -1):
         arr[i], arr[0] = arr[0], arr[i]  # swap
         heapify(arr, i, 0)
 
-
-# Driver's code
-if __name__ == '__main__':
-    arr = [12, 11, 13, 5, 6, 7]
-
-    # Function call
-    heapSort(arr)
-    N = len(arr)
-
-    print("Sorted array is")
-    for i in range(N):
-        print("%d" % arr[i], end=" ")
 
 choice_string = '''
 Choose a number:
@@ -251,6 +239,7 @@ Choose a number:
 7. Linear search
 8. Binary search
 9. Factorial
+10. Heap sort
 '''
 choice = int(input(f'{choice_string}\n'))
 
@@ -361,3 +350,16 @@ elif choice == 8:
 elif choice == 9:
     n = int(input('Enter a number: \n'))
     print(f'Factorial of {n}: {factorial(n)}')
+else:
+    arr = []
+    n = int(input('No. of elements: \n'))
+    for i in range(0, n):
+        arr.append(int(input()))
+
+    print("Unsorted list is:")
+    print(arr)
+
+    heap_sort(arr)
+
+    print("Sorted list is:")
+    print(arr)
