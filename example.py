@@ -177,9 +177,10 @@ def binary_search(arr, target):
             low = mid + 1
         # If target is smaller, ignore the right half
         else:
-            high = mid - 1
-    # Target is not present in array
+            high = (mid - 1)
     return -1
+
+#this is my contibutation
 
 
 # Contributer Hanson George
